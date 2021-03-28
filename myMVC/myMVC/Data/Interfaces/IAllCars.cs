@@ -9,7 +9,7 @@ namespace myMVC.Data.Interfaces
     public interface IAllCars
     {
         IEnumerable<Car> AllCars { get; }
-        IEnumerable<Car> FavouriteCars { get; set; }
+        IEnumerable<Car> FavouriteCars { get; }
         Car GetCarById(int index);
     }
 }
