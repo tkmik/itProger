@@ -1,2 +1,2 @@
 # itProger
-[course asp-net](https://itproger.com/course/asp-net)
+[course asp-net-core](https://itproger.com/course/asp-net)
