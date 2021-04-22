@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using myMVC.Data;
 using myMVC.Data.Interfaces;
 using myMVC.Data.Mocks;
+using myMVC.Data.Models;
 using myMVC.Data.Repository;
 using System;
 using System.Collections.Generic;
@@ -35,9 +36,13 @@ namespace myMVC
             });
             services.AddTransient<IAllCars, CarRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => Cart.GetCart(sp));
             services.AddMvc().AddMvcOptions((options) => 
                 options.EnableEndpointRouting = false
             );
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +51,7 @@ namespace myMVC
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
 
             using (var scope = app.ApplicationServices.CreateScope())
