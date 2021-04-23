@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace myMVC.Data.Interfaces
 {
-    public interface IAllCars
+    public interface IAllOrders
     {
-        IEnumerable<Car> AllCars { get; }
-        IEnumerable<Car> FavouriteCars { get; }
-        Task<Car> GetCarById(int index);
+        Task CreateOrderAsync(Order order);
     }
 }

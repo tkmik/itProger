@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace myMVC.ViewModels
 {
-    public class CarsListViewModels
+    public class HomeViewModel
     {
-        public IEnumerable<Car> AllCars { get; set; }
-        public string CurrentCategory { get; set; }
+        public IEnumerable<Car> Cars { get; set; }
     }
 }

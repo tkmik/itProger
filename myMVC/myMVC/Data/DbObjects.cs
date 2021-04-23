@@ -26,7 +26,7 @@ namespace myMVC.Data
                         Price = 45000,
                         IsFavourite = true,
                         Available = true,
-                        Category = Categories["Electro cars"]
+                        Category = Categories["Electro"]
                     },
                     new Car{
                         Name = "BMV",
@@ -36,7 +36,7 @@ namespace myMVC.Data
                         Price = 105000,
                         IsFavourite = false,
                         Available = true,
-                        Category = Categories["Classic cars"]
+                        Category = Categories["Classic"]
                     }
                 });
             }
@@ -52,8 +52,8 @@ namespace myMVC.Data
                 {
                     var list = new Category[]
                     {
-                         new Category{ CategoryName = "Electro cars", Description = "modern, using electricity" },
-                         new Category{ CategoryName = "Classic cars", Description = "old, using petrol"  }
+                         new Category{ CategoryName = "Electro", Description = "modern, using electricity" },
+                         new Category{ CategoryName = "Classic", Description = "old, using petrol"  }
                     };
                     Category = new Dictionary<string, Category>();
                     foreach (var item in list)

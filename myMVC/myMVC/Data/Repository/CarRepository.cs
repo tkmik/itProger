@@ -32,9 +32,9 @@ namespace myMVC.Data.Repository
            }             
         }
 
-        public Car GetCarById(int index)
+        public async Task<Car> GetCarById(int index)
         {
-            return appDbContext.Cars.FirstOrDefault(i => i.Id == index);
+            return await appDbContext.Cars.FirstOrDefaultAsync(i => i.Id == index);
         }
     }
 }

@@ -40,7 +40,7 @@ namespace myMVC.Data.Mocks
         }
         public IEnumerable<Car> FavouriteCars { get; set; }
 
-        public Car GetCarById(int index)
+        public Task<Car> GetCarById(int index)
         {
             throw new NotImplementedException();
         }

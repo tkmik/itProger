@@ -20,7 +20,7 @@ namespace myMVC.Controllers
             carRepository = carRep;
             cart = c;
         }
-        public ViewResult Index()
+        public IActionResult Index()
         {
             var items = cart.GetItems();
             cart.ListCartItems = items.Result;

@@ -12,8 +12,8 @@ namespace myMVC.Data.Mocks
             {
                 return new List<Category>
                 {
-                    new Category{ CategoryName = "Electro cars", Description = "modern, using electricity" },
-                    new Category{ CategoryName = "Classic cars", Description = "old, using petrol"  }
+                    new Category{ CategoryName = "Electro", Description = "modern, using electricity" },
+                    new Category{ CategoryName = "Classic", Description = "old, using petrol"  }
                 };
             }
         }

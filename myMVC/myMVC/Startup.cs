@@ -37,6 +37,7 @@ namespace myMVC
             services.AddTransient<IAllCars, CarRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IAllOrders, OrderRepository>();
             services.AddScoped(sp => Cart.GetCart(sp));
             services.AddMvc().AddMvcOptions((options) => 
                 options.EnableEndpointRouting = false
@@ -53,6 +54,11 @@ namespace myMVC
             app.UseStaticFiles();
             app.UseSession();
             app.UseMvcWithDefaultRoute();
+            app.UseMvc(endpoints => 
+            {
+                endpoints.MapRoute("default", "{controller = Home}/{action=Index}/{id?}");
+                endpoints.MapRoute("categoryFilter", "Car/{action}/{category>}", defaults: new { Controller="Car", Action= "GetListCars" });
+            });
 
             using (var scope = app.ApplicationServices.CreateScope())
             {
